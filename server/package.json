@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "news",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "start": "babel-node src/index.js",
     "build": "babel src --out-dir lib",
