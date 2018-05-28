@@ -4,7 +4,9 @@ import random
 class NewsSpider(scrapy.Spider):
 	"""docstring for NewsSpider"""
 	name = "news"
+	start_urls = [
+		"https://www.baidu.com",
+	]
 
-	def start_requests(self):
+	def parse(self, response):
 		
-
