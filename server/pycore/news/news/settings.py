@@ -9,6 +9,7 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 import random
+import os
 
 BOT_NAME = 'news'
 
@@ -75,9 +76,16 @@ COOKIES_ENABLED = False
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'news.middlewares.NewsDownloaderMiddleware': 543,
-#}
+RETRY_TIMES = 10
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+    'scrapy_proxies.RandomProxy': 100,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+}
+root_dir = os.path.dirname(__file__)
+PROXY_LIST = os.path.join(root_dir, 'proxy.txt')
+PROXY_MODE = 0
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
