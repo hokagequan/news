@@ -9,4 +9,4 @@ class NewsSpider(scrapy.Spider):
 	]
 
 	def parse(self, response):
-		print(response)
+		
