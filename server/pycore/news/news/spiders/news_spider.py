@@ -15,5 +15,5 @@ class NewsSpider(scrapy.Spider):
 			print(news.xpath('@href'))
 			yield {
 				"title" : news.css('::text').extract_first(),
-				"url" : news.xpath('@href'),
+				"url" : news.xpath('@href').extract_first(),
 			}
