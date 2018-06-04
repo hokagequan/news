@@ -96,7 +96,7 @@ PROXY_MODE = 0
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'news.pipelines.NewsPipeline': 300,
+    'news.pipelines.MongoDBPipline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -121,4 +121,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # MongoDB
-
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "news"
+MONGODB_COLLECTION = "news"
