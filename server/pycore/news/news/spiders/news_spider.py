@@ -11,8 +11,8 @@ class NewsSpider(scrapy.Spider):
 	def parse(self, response):
 		hot_news = response.css('.hotnews')
 		for news in hot_news.xpath('.//a'):
-			print(news.css('::text').extract_first())
-			print(news.xpath('@href'))
+			print("***************{}".format(news.css('::text').extract_first()))
+			print("***************{}".format(news.xpath('@href')))
 			yield {
 				"title" : news.css('::text').extract_first(),
 				"url" : news.xpath('@href').extract_first(),
