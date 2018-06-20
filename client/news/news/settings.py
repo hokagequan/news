@@ -81,26 +81,26 @@ WSGI_APPLICATION = 'news.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'twodays',
-#         'USER': 'admin',
-#         'PASSWORD': '123456',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'b09vif4auwl54k8',
-        'USER': 'ukiifvzo3axxs1bbybjv',
-        'PASSWORD': '8ueFLqP9gFSBjbJyCrr1',
-        'HOST': 'b09vif4auwl54k8-postgresql.services.clever-cloud.com',
-        'PORT': '5432',
+        'NAME': 'twodays',
+        'USER': 'admin',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'b09vif4auwl54k8',
+#         'USER': 'ukiifvzo3axxs1bbybjv',
+#         'PASSWORD': '8ueFLqP9gFSBjbJyCrr1',
+#         'HOST': 'b09vif4auwl54k8-postgresql.services.clever-cloud.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
