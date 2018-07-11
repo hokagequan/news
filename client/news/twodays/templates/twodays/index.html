@@ -1,10 +1,26 @@
 {% extends "twodays/base.html" %}
 
+{% block header %}
+	<ul class="nav td-tabbar">
+		<li class="nav-item">
+			<a class="nav-link td-tabitem active" href="">今天</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link td-tabitem" href="">昨天</a>
+		</li>
+	</ul>
+{% endblock header %}
+
 {% block content %}
 	{% for new in news %}
-		<div class="news">
-			<h3><a href="{{new.url}}">{{new.title}}</a></h3>
-			<h3>{{new.date}}</h3>
+		<div class="media border-bottom news-item">
+			<img class="mr-3" src="" alt="Generic placeholder image">
+			<div class="media-body">
+				<h5 class="mt-0">
+					{{new.title}}
+				</h5>
+				{{new.date}}
+			</div>
 		</div>
 	{% endfor %}
 {% endblock content %}
