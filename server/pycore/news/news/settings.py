@@ -96,7 +96,8 @@ PROXY_MODE = 0
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'news.pipelines.MongoDBPipline': 300,
+    # 'news.pipelines.MongoDBPipline': 300,
+    'news.pipelines.PostgresPipline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

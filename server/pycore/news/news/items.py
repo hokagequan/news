@@ -13,3 +13,4 @@ class News(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     url = scrapy.Field()
+    date = scrapy.Field()
