@@ -81,6 +81,17 @@ WSGI_APPLICATION = 'news.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+# MONGODB_DATABASES = {
+#     "default": {
+#         "name": database_name,
+#         "host": database_host,
+#         "password": database_password,
+#         "username": database_user,
+#         "tz_aware": True, # if you using timezones in django (USE_TZ = True)
+#     },
+# }
+
+# INSTALLED_APPS += ["django_mongoengine"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
