@@ -25,23 +25,24 @@ class MongoDBPipline(object):
         self.connection.insert(dict(item))
 
         return item
-		
+
 
 class PostgresPipline(object):
-	"""docstring for PostgresPipline"""
-	def open_spider(self, spider):
-		self.connection = psycopg2.connect(host='localhost', database='twodays', dbname='twodays', user='admin', password='123456')
-		self.cur = self.connection.cursor()
+    """docstring for PostgresPipline"""
 
-	def close_spider(self, spider):
-		self.cur.close()
-		self.connection.close()
+    def open_spider(self, spider):
+        self.connection = psycopg2.connect(
+            host='localhost', database='twodays',
+            user='admin', password='123456')
+        self.cur = self.connection.cursor()
 
-	def process_item(self, item, spider):
-		self.cur.execute("insert into twodays_news(title,url,date) values(%s, %s, %s)", (item['title'], item['url'], item['date']))
-		self.connection.commit()
+    def close_spider(self, spider):
+        self.cur.close()
+        self.connection.close()
 
-		return item
+    def process_item(self, item, spider):
+        self.cur.execute("insert into twodays_news(title,url,date) values(%s, %s, %s)",
+                         (item['title'], item['url'], item['date']))
+        self.connection.commit()
 
-
-		
+        return item

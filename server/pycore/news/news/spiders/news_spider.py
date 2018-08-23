@@ -1,5 +1,6 @@
 import scrapy
 import random
+import datetime
 
 from news.items import News
 
@@ -15,6 +16,7 @@ class NewsSpider(scrapy.Spider):
         hot_news = response.css('.hotnews')
         for news in hot_news.xpath('.//a'):
             item = News()
-            item["title"] = news.css('::text').extract_first()
-            item["url"] = news.xpath('@href').extract_first()
+            item['title'] = news.css('::text').extract_first()
+            item['url'] = news.xpath('@href').extract_first()
+            item['date'] = datetime.datetime.now()
             yield item
